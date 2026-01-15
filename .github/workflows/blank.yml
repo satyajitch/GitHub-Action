@@ -9,12 +9,14 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: printing world
         run: echo "world"
 
   deploy:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: deploying the app
         run: echo "deployed"
