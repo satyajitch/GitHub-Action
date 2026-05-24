@@ -4,10 +4,10 @@ on:
     branches: main
 
 jobs:
-  Details:
+  Context-demo:
     runs-on: ubuntu-latest
     steps:
       - name: printing details
         run: |
-        echo "${{github.actor}}'s push is merged into main of repo: ${{github.repository}}"
-        echo "Dummy"
+          echo "${{ github.actor }}'s push is merged into main of repo: ${{github.repository}}"
+          echo "Demo"
