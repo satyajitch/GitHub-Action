@@ -1,0 +1,25 @@
+name: input-demo
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: name of the person who release a version
+        type: choice
+        options:
+          - dev
+          - prod
+          - test
+        default: dev
+        
+      artifact-version:
+        description: version of the release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: printing a message on log
+        run: echo "Deploying the application artifact ${{inputs.artifact-version}} on ${{inputs.environment}} environment"
+      
+      
+      
