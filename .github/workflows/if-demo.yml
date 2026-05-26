@@ -1,0 +1,17 @@
+name: if demo
+on:
+  push: 
+    branches:
+      - main
+      - develop
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print always
+        run: echo "This will be printed always"
+
+      - name: print on condition
+        if: github.ref == 'refs/heads/main'
+        run: echo "This will be printed if push is done to main branch"
