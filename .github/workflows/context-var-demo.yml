@@ -20,6 +20,6 @@ jobs:
 
   Print-Envs:
     runs-on: ubuntu-latest
-      steps:
+    steps:
       - name: printing all environmental variables
-        run: printenv
+        run: printenv  
