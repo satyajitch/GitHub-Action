@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: printing all environmental variables
-        run: printenv
+        run: env
 
       - name: printing current commit sha
         run: echo "$GITHUB_SHA"
