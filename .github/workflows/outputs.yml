@@ -5,6 +5,8 @@ on:
 
 jobs:
   build:
+    outputs:
+      version-name: ${{ steps.stepone.outputs.version }}
     runs-on: ubuntu-latest
     steps:
       - name: step1
@@ -13,3 +15,10 @@ jobs:
 
       - name: step2
         run: echo "The artifact version is ${{ steps.stepone.outputs.version }}"
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: printing value from job build
+        run: echo "The vesion is ${{ needs.build.outputs.version-name }}"
