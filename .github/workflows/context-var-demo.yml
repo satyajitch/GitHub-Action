@@ -17,3 +17,9 @@ jobs:
     steps:
       - name: printing all variables under github
         run: echo "${{ toJson(github) }}"
+
+  Print-Envs:
+    runs-on: ubuntu-latest
+      steps:
+      - name: printing all environmental variables
+        run: printenv
