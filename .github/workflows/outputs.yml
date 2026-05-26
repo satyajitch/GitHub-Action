@@ -12,4 +12,4 @@ jobs:
         run: echo "version:1.0.0" >> $GITHUB_OUTPUT
 
       - name: step2
-        run: echo "The artifact version is ${{ step1.stepone.outputs.version }}"
+        run: echo "The artifact version is ${{ steps.stepone.outputs.version }}"
