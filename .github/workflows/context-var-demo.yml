@@ -11,3 +11,9 @@ jobs:
         run: |
           echo "${{ github.actor }}'s push is merged into main of repo: ${{github.repository}}"
           echo "Demo"
+
+  All-vars:
+    runs-on: ubuntu-latest
+    steps:
+      - name: printing all variables under github
+        run: echo "${{ toJson(github) }}"
